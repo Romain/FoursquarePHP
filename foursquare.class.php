@@ -5,12 +5,13 @@ class Foursquare {
 	// 
 	// GENERAL INFORMATION
 	//
-	// This is the version v0.1 of this class.
+	// This is the version v0.1.1 of this class.
 	// This class has been written by Romain Biard in february 2010
 	// Romain Biard :
 	//		- http://romainbiard.eu
 	//		- http://romain.typepad.fr
 	//		- @biskuit
+	// One bug correction has been provided by @necenzurat
 	
 	//
 	// DESCRIPTION
@@ -249,7 +250,7 @@ class Foursquare {
 	// geolong: longitude (required)
 	// limit: limit of results (optional, default 10, maximum 50)
 	// q: keyword search (optional)
-	function nearbyAndSearch($geloat,$geolong,$l,$q) {
+	function nearbyAndSearch($geloat,$geolong,$limit,$q) {
 		$method = "/venues".".".$this->format."?geolat=".$geolat."&geolong=".$geolong;
 		
 		if(isset($limit) && $limit != NULL && ($limit > 0) && ($limit <= 50))
